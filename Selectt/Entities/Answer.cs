@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,6 +14,7 @@ namespace Selectt.Entities
         public int PollId { get; set; }
 
         [Required]
+        [DisplayName("Answer")]
         public string PollAnswer { get; set; }
 
         public virtual Poll Poll { get; set; }

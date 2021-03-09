@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Selectt.Entities.Poll>
+
+@{
+    ViewBag.Title = "Polls";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
+        </th>
+        <th>
+            Answers
+        </th>
+        <th>
+            Responses
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreResultsPublic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WasSent)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @item.Answers.Count
+            </td>
+            <td>
+                @item.Answers.Sum(a => a.Responses.Count)/@item.Respondents.Count
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreResultsPublic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WasSent)
+            </td>
+            <td>
+                @if (!item.WasSent)
+                {
+                    <text>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PollId }) |
+                        @Html.ActionLink("Send", "Send", new { id = item.PollId }) |
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        @Html.ActionLink("Results", "Results", new { id = item.PollId }) |
+                    </text>
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.PollId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PollId })
+            </td>
+        </tr>
+    }
+
+</table>

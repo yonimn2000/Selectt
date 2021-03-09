@@ -1,0 +1,23 @@
+﻿@model Selectt.Entities.Poll
+
+@{
+    ViewBag.Title = "Vote";
+}
+
+<h2>Vote</h2>
+
+<table class="table">
+    <tr>
+        <th>Answer</th>
+        <th></th>
+    </tr>
+    @foreach (var answer in Model.Answers)
+    {
+        <tr>
+            <td>@answer.PollAnswer</td>
+            <td>
+                @Html.ActionLink("Select", "SelectVote", new { answerId = answer.AnswerId, token = ViewBag.Token }, null)
+            </td>
+        </tr>
+    }
+</table>
