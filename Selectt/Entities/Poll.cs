@@ -22,6 +22,7 @@ namespace Selectt.Entities
         [Required]
         public string Question { get; set; }
 
+        [DisplayName("End Date Time")]
         public DateTime? EndDateTime { get; set; }
 
         [DisplayName("Are Results Public")]

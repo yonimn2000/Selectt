@@ -7,12 +7,9 @@ namespace Selectt.Entities
     public class Respondent
     {
         [Key]
-        [Column(Order = 0)]
-        [ForeignKey("Poll")]
-        public int PollId { get; set; }
+        public int RespondentId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         public string Email { get; set; }
 
         [Required]
@@ -20,6 +17,9 @@ namespace Selectt.Entities
 
         [DisplayName("Has Voted")]
         public bool HasVoted { get; set; }
+
+        [ForeignKey("Poll")]
+        public int PollId { get; set; }
 
         public virtual Poll Poll { get; set; }
 
