@@ -191,6 +191,9 @@ namespace Selectt.Controllers
             if (respondent == null)
                 return HttpNotFound();
 
+            if (respondent.HasVoted)
+                return RedirectToAction("AnonymousResults", new { token });
+
             Answer answer = respondent.Poll.Answers.Where(a => a.AnswerId == answerId).FirstOrDefault();
 
             if(answer == null)
@@ -214,7 +217,9 @@ namespace Selectt.Controllers
             if (respondent == null)
                 return HttpNotFound();
 
-            return View("Results", respondent.Poll);
+            if(respondent.Poll.AreResultsPublic)
+                return View("Results", respondent.Poll);
+            return View("PrivateResults");
         }
 
         // GET: Polls/Results
