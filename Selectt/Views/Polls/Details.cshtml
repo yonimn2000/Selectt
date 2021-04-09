@@ -1,0 +1,99 @@
+﻿@model Selectt.Entities.Poll
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Poll</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreResultsPublic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreResultsPublic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WasSent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WasSent)
+        </dd>
+
+        <dt>
+            Answers
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Answer</th>
+                    <th>Responses</th>
+                </tr>
+                @foreach (var answer in Model.Answers)
+                {
+                    <tr>
+                        <td>@answer.PollAnswer</td>
+                        <td>@answer.Responses.Count</td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+        <dt>
+            Respondents
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Respondent Email</th>
+                    <th>Has Voted</th>
+                </tr>
+                @foreach (var respondent in Model.Respondents)
+                {
+                    <tr>
+                        <td>@respondent.Email</td>
+                        <td>@respondent.HasVoted</td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PollId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
