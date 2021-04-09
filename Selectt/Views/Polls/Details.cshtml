@@ -4,30 +4,64 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="Result-header text-center">Details</h2>
 
 <div>
-    <h4>Poll</h4>
+    
     <hr />
     <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
+        <dt class=" dt-header1 text-center">
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            Poll Name
         </dt>
 
-        <dd>
+        <dd class="dd-answer text-center">
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Question)
-        </dt>
+        <!--<dt class="dt-header1 text-center">
+            Posed Question-->
+            @*@Html.DisplayNameFor(model => model.Question)*@
+        <!--</dt>-->
 
-        <dd>
-            @Html.DisplayFor(model => model.Question)
+        <dd class="dd-answer text-center">
+            
+            <blockquote class="unique-blockquote">
+            <p>
+                @Html.DisplayFor(model => model.Question)
+            </p>
+                <span class="text-left"> - Posed Question</span>  <!--We need to add a user object-->
+            </blockquote>
         </dd>
 
-        <dt>
+        <dd>
+            <table class="table text-center justify-content-center">
+                <thead>
+                    <tr align="center">
+                        <th class="table-header-polls" width="33%">
+                            @Html.DisplayNameFor(model => model.EndDateTime)
+                        </th>
+                        <th class="table-header-polls" width="33%">
+                            Are these results public?
+
+                        </th>
+                        <th class="table-header-polls" width="33%">
+                            Was this poll sent out to respondents?
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="table-content" width="33%">@Html.DisplayFor(model => model.EndDateTime)</td>
+                    <td width="33%">@Html.DisplayFor(model => model.AreResultsPublic)</td>
+                    <td width="33%">@Html.DisplayFor(model => model.WasSent)</td>
+                </tr>
+
+            </table>
+        </dd>
+
+
+        @*<dt>
             @Html.DisplayNameFor(model => model.EndDateTime)
         </dt>
 
@@ -36,64 +70,196 @@
         </dd>
 
         <dt>
+            Are these results public?
             @Html.DisplayNameFor(model => model.AreResultsPublic)
-        </dt>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AreResultsPublic)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AreResultsPublic)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WasSent)
-        </dt>
+            <dt>
+                Was this poll sent out to respondents?
+                @Html.DisplayNameFor(model => model.WasSent)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.WasSent)
-        </dd>
+            <dd>
 
-        <dt>
-            Answers
-        </dt>
+                @Html.DisplayFor(model => model.WasSent)
+            </dd>
+            *@
 
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>Answer</th>
-                    <th>Responses</th>
-                </tr>
-                @foreach (var answer in Model.Answers)
-                {
-                    <tr>
-                        <td>@answer.PollAnswer</td>
-                        <td>@answer.Responses.Count</td>
-                    </tr>
-                }
-            </table>
-        </dd>
 
-        <dt>
-            Respondents
-        </dt>
+            <dt class=" dt-header2 text-center">
+                Answers
+            </dt>
 
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>Respondent Email</th>
-                    <th>Has Voted</th>
-                </tr>
-                @foreach (var respondent in Model.Respondents)
-                {
-                    <tr>
-                        <td>@respondent.Email</td>
-                        <td>@respondent.HasVoted</td>
-                    </tr>
-                }
-            </table>
-        </dd>
+            <dd>
+                <table class="table  text-center col-sm-12 ">
+                    <thead class="thead-custom-color">
+                        <tr align="center">
+                            <th class="table-header-polls" width="50%">Answer</th>
+                            <th class="table-header-polls" width="50%" >Responses</th>
+                        </tr>
+                    </thead>
 
-    </dl>
+                    @foreach (var answer in Model.Answers)
+                    {
+                        <tr>
+                            <td class="table-content" width="50%">@answer.PollAnswer</td>
+                            <td class="table-content" width="50%">@answer.Responses.Count</td>
+                        </tr>
+                    }
+                </table>
+
+
+            </dd>
+
+            <dt class=" dt-header2 text-center">
+                Respondents
+            </dt>
+
+            <dd>
+                <table class="table  text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="table-header-polls" width="50%">Respondent Email</th>
+                            <th class="table-header-polls" width="50%">Has Voted</th>
+                        </tr>
+                    </thead>
+                    @foreach (var respondent in Model.Respondents)
+                    {
+                        <tr>
+                            <td class="table-content" width="50%">@respondent.Email</td>
+                            <td class="table-content" width="50%">@respondent.HasVoted</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+
+        </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PollId }) |
-    @Html.ActionLink("Back to List", "Index")
+<div class="empty-box"></div>
+<p class="text-center">
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.PollId }) |
+    @Html.ActionLink("Back to List", "Index")*@
+    <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
+
 </p>
+
+<style>
+
+    .Result-header {
+        font-size: 70px;
+        font-family: 'Anton', sans-serif;
+        margin-top: 30px;
+    }
+
+    .thead-custom-color {
+        background-color: #f4511e;
+    }
+
+    .universal-button {
+
+        display: inline-block;
+        padding: 0.46rem 1.6em;
+        margin: 0 0.2em 0.2em 0;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none !important;
+        font-weight: 300 !important;
+        color: #000000 !important;
+        text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
+        background-color: #f4511e;
+        text-align: center;
+        transition: all 0.15s;
+        font-family: 'Anton', sans-serif;
+        width: 200px;
+    }
+
+        .universal-button:hover {
+            text-shadow: 0 0 2em rgba(255,255,255,1);
+            color: #FFFFFF !important;
+            border-color: #FFFFFF;
+            transition: all 0.3s ease 0s;
+            text-decoration: none !important;
+            border-radius: 50px;
+        }
+    .empty-box{
+        height: 50px;
+    }
+
+    .dt-header1 {
+        font-size: 24px;
+        font-family: 'Anton', sans-serif;
+        text-decoration: underline;
+    }
+
+    .dt-header2 {
+        font-size: 24px;
+        font-family: 'Anton', sans-serif;
+    }
+
+    .dd-answer {
+        font-size: 18px;
+        font-family:  'Roboto Slab', serif;
+    }
+
+
+    .unique-blockquote {
+        font-size: 1.4em;
+        width: 60%;
+        margin: 20px auto;
+        font-family: Open Sans;
+        font-style: italic;
+        color: #555555;
+        padding: 1.2em 30px 1.2em 75px;
+        border-left: 8px solid #f4511e;
+        line-height: 1.6;
+        position: relative;
+        background: #EDEDED;
+        border-radius: 30px;
+    }
+
+        .unique-blockquote:before {
+            font-family: Arial;
+            content: "\201C";
+            color: #f4511e;
+            font-size: 4em;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+        }
+
+        .unique-blockquote:after {
+            content: '';
+        }
+
+        .unique-blockquote span {
+            display: block;
+            color: #333333;
+            font-style: normal;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+    .table-content {
+        font-family: 'Roboto Slab',serif;
+    }
+
+    .table-header-polls {
+        font-size: 18px;
+        font-family: 'Roboto Slab',serif;
+    }
+    .check-box {
+        transform: scale(2.0);
+    }
+
+    .empty-box {
+        height: 50px;
+    }
+    
+
+   
+
+</style>

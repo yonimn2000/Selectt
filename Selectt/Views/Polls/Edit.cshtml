@@ -4,23 +4,29 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 class="Result-header text-center">Edit</h2>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href="@Url.Action("Index", "Home")" class="universal-button"><i class="fa fa-list fa-sm" aria-hidden="true"></i>  Back To List</a>
 </div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Poll</h4>
-        <hr />
+    
+<div class="form-horizontal">
+
+    <hr />
+
+    <div class="container-poll container-fluid d-col-flex text-center">
+
+        <h4 class=" dt-header1 text-center">Poll</h4>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.PollId)
 
-        <div class="form-group">
+        <div class="form-group"><!--Center-->
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
@@ -28,7 +34,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> <!--Left Span Wider-->
             @Html.LabelFor(model => model.Question, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Question, new { htmlAttributes = new { @class = "form-control" } })
@@ -36,15 +42,15 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> <!--Center Mild Left-->
             @Html.LabelFor(model => model.EndDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.EndDateTime, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EndDateTime, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> <!--Center Mild Right-->
             @Html.LabelFor(model => model.AreResultsPublic, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -55,51 +61,159 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="text-center"><!--col-md-offset-2 col-md-10-->
+                <input type="submit" value="Save Your New Form" class="universal-button" />
             </div>
         </div>
-
+        </div>
         <hr />
 
+
         @Html.ActionLink("Add an Answer", "Create", "Answers", new { pollId = Model.PollId }, null)
-        <table class="table">
-            <tr>
-                <th>Answer</th>
-                <th></th>
-            </tr>
+        <table class="table table-hover">
+            <thead class="thead-custom-color">
+                <tr>
+                    <th class="table-header-polls">Answer's</th>
+                    <th></th>
+                </tr>
+            </thead>
             @foreach (var answer in Model.Answers)
             {
                 <tr>
-                    <td>@answer.PollAnswer</td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", "Answers", new { id = answer.AnswerId }, null) |
-                        @Html.ActionLink("Delete", "Delete", "Answers", new { id = answer.AnswerId }, null)
+                    <td class="table-content align-middle">@answer.PollAnswer</td>
+
+                    @*<td>
+                            @Html.ActionLink("Edit", "Edit", "Answers", new { id = answer.AnswerId }, null) |
+                            @Html.ActionLink("Delete", "Delete", "Answers", new { id = answer.AnswerId }, null)
+                        </td>*@
+
+
+                    <td class="text-right">
+                        <a href="@Url.Action("Edit", "Answers", new { id = answer.AnswerId }, null)" class="universal-button-standard-size align-middle" data-toggle="tooltip" data-placement="top" title="Edit your Answer."><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("Delete", "Answers", new { id = answer.AnswerId }, null)" class="universal-button-standard-size align-middle" data-toggle="tooltip" data-placement="top" title="Delete your Answer."><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             }
         </table>
 
         @Html.ActionLink("Add an Allowed Respondent", "Create", "Respondents", new { pollId = Model.PollId }, null)
-        <table class="table">
-            <tr>
-                <th>Respondent Email</th>
-                <th></th>
-            </tr>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="table-header-polls">Respondent Email's</th>
+                    <th></th>
+                </tr>
+            </thead>
             @foreach (var respondent in Model.Respondents)
             {
                 <tr>
-                    <td>@respondent.Email</td>
-                    <td>
+                    <td class="table-content align-middle">@respondent.Email</td>
+
+
+                    @*<td class="text-center">
                         @Html.ActionLink("Edit", "Edit", "Respondents", new { id = respondent.RespondentId }, null) |
                         @Html.ActionLink("Delete", "Delete", "Respondents", new { id = respondent.RespondentId }, null)
+                        </td>*@
+
+
+                    <td class="text-right">
+                        <a href="@Url.Action("Edit", "Respondents", new { id = respondent.RespondentId }, null)" class="universal-button-standard-size align-middle" data-toggle="tooltip" data-placement="top" title="Edit your Respondent E-mail"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("Delete", "Respondents", new { id = respondent.RespondentId }, null)" class="universal-button-standard-size align-middle" data-toggle="tooltip" data-placement="top" title="Delete your Respondent's E-mail"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             }
         </table>
     </div>
-}
+    }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+
+    <style>
+        .thead-custom-color {
+            background-color: #f4511e;
+        }
+
+        .Result-header {
+            font-size: 70px;
+            font-family: 'Anton', sans-serif;
+            margin-top: 30px;
+        }
+
+        .dt-header1 {
+            font-size: 24px;
+            font-family: 'Anton', sans-serif;
+            text-decoration: underline;
+        }
+
+        .dt-header2 {
+            font-size: 24px;
+            font-family: 'Anton', sans-serif;
+        }
+
+        .universal-button-standard-size {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
+            text-decoration: none;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+            .universal-button-standard-size:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
+
+        .table-header-polls {
+            font-size: 19px;
+            font-family: 'Roboto Slab',serif;
+        }
+
+        .table-content {
+            font-family: 'Roboto Slab',serif;
+        }
+
+        .universal-button {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+            .universal-button:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
+
+
+        .check-box {
+            transform: scale(2.0);
+        }
+
+        .container-fluid {
+            background: #e9ecef;
+            border-radius: 50px;
+            box-shadow: #f4511e 10px 10px;
+        }
+    </style>

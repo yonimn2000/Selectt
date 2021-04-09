@@ -4,30 +4,150 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+
+
+
+<h2 class="Result-header text-center">Delete</h2>
+
+<h3 class="delete-header text-center">Are you sure you want to delete this Answer from the list?</h3>
 <div>
-    <h4>Answer</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+    <h4 class="dt-header1 text-center">Answer</h4>
+    <p>
+        @*<dl class="dl-horizontal text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PollAnswer)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PollAnswer)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-    @using (Html.BeginForm()) {
+                <dt>
+                    @Html.DisplayNameFor(model => model.HasVoted)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HasVoted)
+                </dd>
+
+            </dl>*@
+
+        <table class="table  table-bordered table-hover text-center align-middle">
+            <thead class="thead-light">
+                <tr>
+                    <th class="table-header-polls" width="50%">@Html.DisplayNameFor(model => model.PollAnswer)</th>
+
+                </tr>
+            </thead>
+            <tr>
+                <td class="table-contet" width="50%">@Html.DisplayFor(model => model.PollAnswer)</td>
+
+            </tr>
+        </table>
+
+    </p>
+
+
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Delete" class="warning-button" />
+            @*@Html.ActionLink("Back to List", "Index")*@
+            <a href="@Url.Action( "Edit")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
         </div>
     }
+
 </div>
+
+<style>
+    .Result-header {
+        font-size: 70px;
+        font-family: 'Anton', sans-serif;
+        margin-top: 30px;
+    }
+
+    .delete-header {
+        color: red;
+        font-weight: bolder;
+    }
+
+    .dt-header1 {
+        font-size: 24px;
+        font-family: 'Anton', sans-serif;
+        text-decoration: underline;
+    }
+
+    .table-content {
+        font-family: 'Roboto Slab',serif;
+    }
+
+    .table-header-polls {
+        font-size: 18px;
+        font-family: 'Roboto Slab',serif;
+    }
+
+    .check-box {
+        transform: scale(2.0);
+    }
+
+    .warning-button {
+        display: inline-block;
+        padding: 0.46rem 1.6em;
+        margin: 0 0.2em 0.2em 0;
+        border-radius: 0.12em;
+        border-color: red;
+        box-sizing: border-box;
+        text-decoration: none !important;
+        font-weight: 300 !important;
+        color: #000000 !important;
+        text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
+        background-color: red;
+        text-align: center;
+        transition: all 0.15s;
+        font-family: 'Anton', sans-serif;
+        width: 200px;
+    }
+
+        .warning-button:hover {
+            text-shadow: 0 0 2em rgba(255,255,255,1);
+            color: #FFFFFF !important;
+            border-color: #FFFFFF;
+            transition: all 0.3s ease 0s;
+            text-decoration: none !important;
+            border-radius: 50px;
+        }
+
+    .universal-button {
+        display: inline-block;
+        padding: 0.46rem 1.6em;
+        margin: 0 0.2em 0.2em 0;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none !important;
+        font-weight: 300 !important;
+        color: #000000 !important;
+        text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
+        background-color: #f4511e;
+        text-align: center;
+        transition: all 0.15s;
+        font-family: 'Anton', sans-serif;
+        width: 200px;
+    }
+
+        .universal-button:hover {
+            text-shadow: 0 0 2em rgba(255,255,255,1);
+            color: #FFFFFF !important;
+            border-color: #FFFFFF;
+            transition: all 0.3s ease 0s;
+            text-decoration: none !important;
+            border-radius: 50px;
+        }
+</style>
+

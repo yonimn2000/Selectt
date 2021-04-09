@@ -7,10 +7,20 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab&family=Train+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
+
+            <!--This is the Image We are loading in-->
+            <div class="image">
+                <img class="image-ballot-box" src="@Url.Content("~/Content/images/ballot2.png")" alt="ballot box" />
+            </div>
             <div class="navbar-header">
                 @Html.ActionLink("Selectt", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
@@ -19,7 +29,8 @@
             </button>
             <div id="navbarSupportedContent" class="navbar-collapse collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { Area = "" }, new { @class = "nav-link" })</li>
+                    
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { Area = "" }, new { @class = "nav-link" })
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { Area = "" }, new { @class = "nav-link" })</li>
                     
                 </ul>
@@ -38,5 +49,30 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-</body>
+
+
+   
+
+<style>
+
+
+            .nav-link {
+                font-size: 25px;
+                font-family: 'Train One', cursive;
+
+            }
+            .navbar-brand {
+                font-family: 'Anton', sans-serif;
+                font-size: 50px;
+
+            }
+            .image-ballot-box{
+                width: 100px;
+            }
+         
+
+</style>
+        
+    </body>
+
 </html>
