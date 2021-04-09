@@ -13,6 +13,7 @@ namespace Selectt.Models
 
     public class RespondentEditModel
     {
+        public int PollId { get; set; }
         [Required]
         public int RespondentId { get; set; }
 
