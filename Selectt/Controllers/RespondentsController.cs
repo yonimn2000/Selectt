@@ -72,7 +72,8 @@ namespace Selectt.Controllers
             return View(new RespondentEditModel
             {
                 Email = respondent.Email,
-                RespondentId = respondent.RespondentId
+                RespondentId = respondent.RespondentId,
+                PollId = respondent.PollId
             });
         }
 
