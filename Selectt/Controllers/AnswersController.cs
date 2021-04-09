@@ -76,7 +76,8 @@ namespace Selectt.Controllers
             return View(new AnswerEditModel
             {
                 Answer = answer.PollAnswer,
-                AnswerId = answer.AnswerId
+                AnswerId = answer.AnswerId,
+                PollId = answer.PollId
             });
         }
 
