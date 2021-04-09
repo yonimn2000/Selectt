@@ -59,9 +59,7 @@
 
         <div class="form-actions no-color text-center">
             <input type="submit" value="Delete" class="warning-button" />
-            @*@Html.ActionLink("Back to List", "Index")*@
-            @Html.ActionLink("Back to Poll Editor", "Edit", "Polls", new { id = Model.PollId }, null)
-            @*<a href="@Url.Action( "Edit")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>*@
+            <a href="@Url.Action("Edit", "Polls", new { id = Model.PollId })" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
         </div>
     }
 
