@@ -19,9 +19,8 @@
             </button>
             <div id="navbarSupportedContent" class="navbar-collapse collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { Area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink(User.Identity.IsAuthenticated ? "Polls" : "Home", "Index", "Home", new { Area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { Area = "" }, new { @class = "nav-link" })</li>
-                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
