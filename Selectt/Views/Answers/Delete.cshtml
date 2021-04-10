@@ -59,96 +59,9 @@
 
         <div class="form-actions no-color text-center">
             <input type="submit" value="Delete" class="warning-button" />
-            <a href="@Url.Action("Edit", "Polls", new { id = Model.PollId })" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
+            <a href="@Url.Action("Edit", "Polls", new { id = Model.PollId })" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To Poll Editor</a>
         </div>
     }
 
 
 </div>
-
-<style>
-    .Result-header {
-        font-size: 70px;
-        font-family: 'Anton', sans-serif;
-        margin-top: 30px;
-    }
-
-    .delete-header {
-        color: red;
-        font-weight: bolder;
-    }
-
-    .dt-header1 {
-        font-size: 24px;
-        font-family: 'Anton', sans-serif;
-        text-decoration: underline;
-    }
-
-    .table-content {
-        font-family: 'Roboto Slab',serif;
-    }
-
-    .table-header-polls {
-        font-size: 18px;
-        font-family: 'Roboto Slab',serif;
-    }
-
-    .check-box {
-        transform: scale(2.0);
-    }
-
-    .warning-button {
-        display: inline-block;
-        padding: 0.46rem 1.6em;
-        margin: 0 0.2em 0.2em 0;
-        border-radius: 0.12em;
-        border-color: red;
-        box-sizing: border-box;
-        text-decoration: none !important;
-        font-weight: 300 !important;
-        color: #000000 !important;
-        text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
-        background-color: red;
-        text-align: center;
-        transition: all 0.15s;
-        font-family: 'Anton', sans-serif;
-        width: 200px;
-    }
-
-        .warning-button:hover {
-            text-shadow: 0 0 2em rgba(255,255,255,1);
-            color: #FFFFFF !important;
-            border-color: #FFFFFF;
-            transition: all 0.3s ease 0s;
-            text-decoration: none !important;
-            border-radius: 50px;
-        }
-
-    .universal-button {
-        display: inline-block;
-        padding: 0.46rem 1.6em;
-        margin: 0 0.2em 0.2em 0;
-        border-radius: 0.12em;
-        box-sizing: border-box;
-        text-decoration: none !important;
-        font-weight: 300 !important;
-        color: #000000 !important;
-        text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
-        background-color: #f4511e;
-        text-align: center;
-        transition: all 0.15s;
-        font-family: 'Anton', sans-serif;
-        width: 200px;
-    }
-
-        .universal-button:hover {
-            text-shadow: 0 0 2em rgba(255,255,255,1);
-            color: #FFFFFF !important;
-            border-color: #FFFFFF;
-            transition: all 0.3s ease 0s;
-            text-decoration: none !important;
-            border-radius: 50px;
-        }
-</style>
-
-     

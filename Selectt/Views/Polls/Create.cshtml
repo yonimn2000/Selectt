@@ -4,85 +4,127 @@
     ViewBag.Title = "Create";
 }
 
-<h2 class="text-center">Create</h2>
+<h2 class="Result-header text-center">Create</h2>
 
-        <h4>Poll Information</h4>
-   
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
+<div class=" form-horizontal">
+    <hr />
+    <div class="container-poll container-fluid d-col-flex text-center p-4">
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+        <h4 class=" dt-header1 text-center">Poll Information</h4>
 
-        <div class="form-horizontal">
-            
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
-
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "ballot-header control-label col-md-2" })
+            <div class="form-size">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Question, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.Question, new { @class = "form-control", rows = 5 })
-                    @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
-                </div>
+        <hr class="orange-line" />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Question, htmlAttributes: new { @class = "ballot-header control-label col-md-2" })
+            <div class="form-size">
+                @Html.TextAreaFor(model => model.Question, new { @class = "form-control", rows = 5 })
+                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.EndDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EndDateTime, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EndDateTime, "", new { @class = "text-danger" })
-                </div>
+        <hr class="orange-line" />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EndDateTime, htmlAttributes: new { @class = "ballot-header control-label" })
+            <div class="form-size">
+                @Html.EditorFor(model => model.EndDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EndDateTime, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.AreResultsPublic, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.AreResultsPublic)
-                        @Html.ValidationMessageFor(model => model.AreResultsPublic, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
+        <hr class="orange-line" />
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+        <div class="form-group">
+            @Html.LabelFor(model => model.AreResultsPublic, htmlAttributes: new { @class = "ballot-header control-label col-md-2" })
+            <div class="">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.AreResultsPublic)
+                    @Html.ValidationMessageFor(model => model.AreResultsPublic, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
+
+        <div class="form-group">
+            <div class="">
+                <input type="submit" value="Create Your Poll" class="universal-button" />
+                
+            </div>
+        </div>
+    </div>
+</div>
     }
 
-
+    <div class="empty-box"></div>
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
     </div>
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
 
-<style>
-    .ballot {
-        border-radius: 150px;
-        background: #e9ecef;
-        height: 1050px;
-        width:800px;
-        border-width:thick;
-        border-color: black;
-        margin-left:150px;
+@section styles{
+    <style>
+
+        .universal-button-standard-size {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
+            text-decoration: none;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+            .universal-button-standard-size:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
+
+
+        .universal-button {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+            .universal-button:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
+
+    </style>
+
     }
-
-
-</style>

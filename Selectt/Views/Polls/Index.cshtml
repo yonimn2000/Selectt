@@ -6,25 +6,22 @@
 
 <h2 class="Result-header text-center">Your Polls</h2>
 
-<p class="float-left">
-    @*@Html.ActionLink("Create New", "Create")*@
-    <a href="@Url.Action("Create")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i>  Create A New Poll</a>
-</p>
+
 
 
 <table class="table table-bordered  table-hover">
     <thead class="thead-dark">
         <tr class="text-center">
-            <th class="table-header-polls  align-middle">
+            <th class="table-header-polls3  align-middle">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th class="table-header-polls align-middle">
+            <th class="table-header-polls3 align-middle">
                 @Html.DisplayNameFor(model => model.Question)
             </th>
-            <th class="table-header-polls align-middle">
+            <th class="table-header-polls3 align-middle">
                 Answers
             </th>
-            <th class="table-header-polls align-middle">
+            <th class="table-header-polls3 align-middle">
                 Responses
             </th>
             <th class="table-header-polls2 align-middle">
@@ -36,164 +33,106 @@
             <th class="table-header-polls2 align-middle">
                 @Html.DisplayNameFor(model => model.WasSent)
             </th>
-            <th><a href="@Url.Action("Create")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i>  Create A New Poll</a></th>
+            <th><a href="@Url.Action("Create")" class="universal-button"><i class="fa fa-plus fa-sm" aria-hidden="true"></i>  Create A New Poll</a></th>
         </tr>
     </thead>
 
 
-
-
-
     @foreach (var item in Model)
     {
-<tr>
+        <tr>
+            <td class="table-content text-left align-middle">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="table-content text-left align-middle">
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td class="table-content text-center align-middle">
+                @item.Answers.Count
+            </td>
+            <td class="table-content text-center align-middle">
+                @item.Answers.Sum(a => a.Responses.Count)/@item.Respondents.Count
+            </td>
+            <td class="table-content text-center align-middle">
+                @Html.DisplayFor(modelItem => item.EndDateTime)
+            </td>
+            <td class="table-content text-center align-middle">
+                @Html.DisplayFor(modelItem => item.AreResultsPublic)
+            </td>
+            <td class="table-content text-center align-middle">
+                @Html.DisplayFor(modelItem => item.WasSent)
+            </td>
+            <td>
 
-
-    <td class="table-content text-left align-middle">
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td class="table-content text-left align-middle">
-        @Html.DisplayFor(modelItem => item.Question)
-    </td>
-    <td class="table-content text-center align-middle">
-        @item.Answers.Count
-    </td>
-    <td class="table-content text-center align-middle">
-        @item.Answers.Sum(a => a.Responses.Count)/@item.Respondents.Count
-    </td>
-    <td class="table-content text-center align-middle">
-        @Html.DisplayFor(modelItem => item.EndDateTime)
-    </td>
-    <td class="table-content text-center align-middle">
-        @Html.DisplayFor(modelItem => item.AreResultsPublic)
-    </td>
-    <td class="table-content text-center align-middle">
-        @Html.DisplayFor(modelItem => item.WasSent)
-    </td>
-    <td>
-
-        <table class="table table-borderless table-sm text-center">
-            <tr>
-                @if (!item.WasSent)
-                {
-
-                    <td><a href="@Url.Action("Edit", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Edit your Poll's details."><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
-                    <td><a href="@Url.Action("Send", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Send your Poll to desired respondents. Once sent you will not be able to edit your Poll."><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a></td>
-                    
-                }
-                else
-                {
-                    <td><a href="@Url.Action("Results", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Examine your results."><i class="fa fa-pie-chart fa-2x" aria-hidden="true"></i></a></td>
-
-
-                }
-                <td> <a href="@Url.Action("Details", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="View  Poll's details."><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a></td>
-                <td> <a href="@Url.Action("Delete", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Delete Your Poll."><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
-
-
-
-            </tr>
-
-            
-        </table>
-        
-
-
-
-    </td>
-    @*<td>
-        @if (!item.WasSent)
-        {
-            <text>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PollId }) |
-                @Html.ActionLink("Send", "Send", new { id = item.PollId }) |
-            </text>
-        }
-        else
-        {
-            <text>
-                @Html.ActionLink("Results", "Results", new { id = item.PollId }) |
-            </text>
-        }
-        @Html.ActionLink("Details", "Details", new { id = item.PollId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.PollId })
-    </td>*@
-</tr>
+                <table class="table table-borderless table-sm text-center">
+                    <tr>
+                        @if (!item.WasSent)
+                        {
+                            <td><a href="@Url.Action("Edit", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Edit your Poll's details."><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+                            <td><a href="@Url.Action("Send", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Send your Poll to desired respondents. Once sent you will not be able to edit your Poll."><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a></td>
+                        }
+                        else
+                        {
+                            <td><a href="@Url.Action("Results", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Examine your results."><i class="fa fa-pie-chart fa-2x" aria-hidden="true"></i></a></td>
+                        }
+                        <td> <a href="@Url.Action("Details", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="View  Poll's details."><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a></td>
+                        <td> <a href="@Url.Action("Delete", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Delete Your Poll."><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
     }
 
 </table>
 
+@section styles{
+    <style>
+        /*<------Maintain these unique buttons------>*/
 
-<style>
-    .Result-header {
-        font-size: 70px;
-        font-family: 'Anton', sans-serif;
-        margin-top: 30px;
-    }
-    .table-header-polls {
-        font-size: 19px;
-        font-family: 'Roboto Slab',serif;
-    }
-    .table-header-polls2 {
-        font-size: 15px;
-        font-family: 'Roboto Slab',serif;
-    }
-
-    .table-content {
-        font-family: 'Roboto Slab',serif;
-    }
-
-
-    .universal-button-standard-size {
-        color: #f4511e !important;
-        background: #f7f7f7;
-        padding: 4px;
-        border: 2px solid #f4511e !important;
-        border-radius: 6px;
-        display: inline-block;
-        transition: all 0.3s ease 0s;
-        font-family: 'Anton', sans-serif;
-        text-decoration: none;
-        font-size: 20px;
-        width: 50px;
-        height: 50px;
-        
-    }
-
-        .universal-button-standard-size:hover {
-            color: #494949 !important;
-            border-radius: 50px;
-            border-color: #494949 !important;
+        .universal-button-standard-size {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
             transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
             text-decoration: none;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
         }
 
+            .universal-button-standard-size:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
 
 
-    .universal-button {
-        color: #f4511e !important;
-        background: #f7f7f7;
-        padding: 4px;
-        border: 2px solid #f4511e !important;
-        border-radius: 6px;
-        display: inline-block;
-        transition: all 0.3s ease 0s;
-        font-family: 'Anton', sans-serif;
-        text-decoration: none;
-        font-size: 20px;
 
-    }
-
-        .universal-button:hover {
-            color: #494949 !important;
-            border-radius: 50px;
-            border-color: #494949 !important;
+        .universal-button {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
             transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
             text-decoration: none;
+            font-size: 20px;
         }
 
-
-    .check-box{
-        transform: scale(2.0);       
-    }
-</style>
+            .universal-button:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
+    </style>
+}

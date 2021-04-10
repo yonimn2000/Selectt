@@ -3,28 +3,46 @@
 }
 
 <div class="jumbotron">
-    <h1>Welcome to Selectt!</h1>
+    <h1 class="Result-header">Welcome to Selectt!</h1>
     <p class="lead">With Selectt, you can create your own polls. </p>
-    
+
+</div>
+<div class="container text-center">
+    <div class="row text-center">
+        <div class="">
+            <h2 class="dt-header3">Getting started</h2>
+            <p class="table-header-polls3">To get started, click on the "Register" button. If you already have an account, you can click "Log In" instead. Be sure to read the about page when you get a chance, and learn some fun things about Selectt!</p>
+            <p>@Html.ActionLink("Register An Account", "Register", "Account", new { Area = "" }, new { @class = "universal-button" })&nbsp;@Html.ActionLink("Log Into Selectt", "Login", "Account", new { Area = "" }, new { @class = "universal-button" })</p>
+
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>To get started, click on the "Register" button in the top right corner of the page. If you already have an account, you can click "Log In" instead.</p>
-        <p>@Html.ActionLink("Register", "Register", "Account", new { Area = "" }, new { @class = "btn btn-primary" })&nbsp;@Html.ActionLink("Log in", "Login", "Account", new { Area = "" }, new { @class = "btn btn-primary" })</p>
-       
-    </div>
-    <div class="col-md-4">
-        <h2>Create a Poll</h2>
-        <p>Click the button below to create your own poll!</p>
-        <br /><br />
-              <p>@Html.ActionLink("Make a Poll", "Create", "Polls", new { Area = "" }, new { @class = "btn btn-primary" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>About Us</h2>
-        <p>If you would like to learn more about who we are, you can click on the button below.</p>
-        <br />
-        <p>@Html.ActionLink("About", "About", "Home", new { Area = "" }, new { @class = "btn btn-primary" })</p>
-    </div>
-</div>
+
+@section styles{
+    <style>
+
+
+        .universal-button {
+            color: #f4511e !important;
+            background: #f7f7f7;
+            padding: 4px;
+            border: 2px solid #f4511e !important;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+            font-family: 'Anton', sans-serif;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+            .universal-button:hover {
+                color: #494949 !important;
+                border-radius: 50px;
+                border-color: #494949 !important;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+            }
+    </style>
+
+}

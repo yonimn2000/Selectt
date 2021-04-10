@@ -50,13 +50,10 @@
                                 <input class="switch-input" type="checkbox" onchange="SwapCharts()" />
                                 <span class="switch-label" data-on="Pie" data-off="Bar"></span>
                                 <span class="switch-handle"></span>
-
                             </label>
-
                         </div>
 
-                        
-
+                       
                     </div>
                     <div id="pie-ID" class="card-body-pie">
                         <canvas class="my-4 h-2" id="pie"></canvas>
@@ -66,16 +63,11 @@
                     </div>
                     <div class="empty-box"></div>
                     <a href="@Url.Action("Index", "Home")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i>  Return to Polls</a>
-                    
-                    
+                                        
                 </div>
-                
             </div>
         </div>
     </div>
-
-
-
 </body>
 
 
@@ -88,7 +80,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script type="text/javascript">
 
-
+        setTimeout(() => { location.reload() }, 60000);
 
         function SwapCharts() {
             var x = document.getElementById("pie-ID");
@@ -125,26 +117,22 @@
                     hoverOffset: 5,
                     borderWidth: 1,
                     hoverBorderWidth: 3,
-
-
-
                 }]
             },
             options: {
+                tooltips: {
+                    titleFontSize: 25,
+                    bodyFontSize: 22,
+
+                },
                 "legend": {
                     "display": true,
                     "labels": {
                         "fontSize": 18,
-                        "fontFamily": "Roboto Slab",
-                        
-                        
+                        "fontFamily": "Roboto Slab",                                                
                     },
-                    
-
                     }
-                },
-                
-                
+                },        
         });
 
       
@@ -170,9 +158,20 @@
                 legend: {
                     display: false
                 },
+                tooltips: {
+                    titleFontSize:25,
+                    bodyFontSize: 22,
+                    
+                },
+                
                 
                 indexAxis: 'y', // Set axes
                 scales: {
+                    xAxes:[{
+                        ticks: {
+                            fontSize: 16
+                        }
+                    }],
                     yAxes: [{
                         ticks: {
                             stepSize: 1,
@@ -192,34 +191,24 @@
 @section styles{
 
     <style>
-        .Result-header {
-            font-size: 75px;
-            font-family: 'Anton', sans-serif;
-            
-        }
+    
+        /*<------------Chart & Chart Slider------------->*/
 
         .chart-text {
             font-size: 30px;
             font-family: 'Roboto Slab', serif;
             
         }
+        /*<-----------Unique table header sizes------->*/
         .table-header {
             font-size: 24px;
             font-family: 'Roboto Slab',serif;
             
         }
-        .table-content{
-            font-family: 'Roboto Slab',serif;
-
-        }
 
         .switch-label {
             font-family: 'Roboto Slab',serif;
         }
-
-
-        
-
 
         .switch {
             position: relative;
@@ -337,37 +326,6 @@
         }
 
 
-        .universal-button {
-            color: #f4511e !important;
-            background: #f7f7f7;
-            padding: 4px;
-            border: 2px solid #f4511e !important;
-            border-radius: 6px;
-            display: inline-block;
-            transition: all 0.3s ease 0s;
-            font-family: 'Anton', sans-serif;
-            text-decoration:none;       
-            font-size: 20px;
-        }
-
-            .universal-button:hover {
-                color: #494949 !important;
-                border-radius: 50px;
-                border-color: #494949 !important;
-                transition: all 0.3s ease 0s;
-                text-decoration:none;
-            }
-
-
-            .empty-box{
-                height: 50px;
-            }
-
-        
-
-            
-
-        
         
     </style>
 }

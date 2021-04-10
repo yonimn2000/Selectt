@@ -12,7 +12,6 @@
     <dl class="dl-horizontal">
 
         <dt class=" dt-header1 text-center">
-            @*@Html.DisplayNameFor(model => model.Name)*@
             Poll Name
         </dt>
 
@@ -20,18 +19,9 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <!--<dt class="dt-header1 text-center">
-            Posed Question-->
-            @*@Html.DisplayNameFor(model => model.Question)*@
-        <!--</dt>-->
-
-        <dd class="dd-answer text-center">
-            
+        <dd class="dd-answer text-center">   
             <blockquote class="unique-blockquote">
-            <p>
-                @Html.DisplayFor(model => model.Question)
-            </p>
-                <span class="text-left"> - Posed Question</span>  <!--We need to add a user object-->
+            <p>@Html.DisplayFor(model => model.Question)</p>
             </blockquote>
         </dd>
 
@@ -56,39 +46,8 @@
                     <td width="33%">@Html.DisplayFor(model => model.AreResultsPublic)</td>
                     <td width="33%">@Html.DisplayFor(model => model.WasSent)</td>
                 </tr>
-
             </table>
         </dd>
-
-
-        @*<dt>
-            @Html.DisplayNameFor(model => model.EndDateTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDateTime)
-        </dd>
-
-        <dt>
-            Are these results public?
-            @Html.DisplayNameFor(model => model.AreResultsPublic)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.AreResultsPublic)
-            </dd>
-
-            <dt>
-                Was this poll sent out to respondents?
-                @Html.DisplayNameFor(model => model.WasSent)
-            </dt>
-
-            <dd>
-
-                @Html.DisplayFor(model => model.WasSent)
-            </dd>
-            *@
-
 
             <dt class=" dt-header2 text-center">
                 Answers
@@ -111,8 +70,6 @@
                         </tr>
                     }
                 </table>
-
-
             </dd>
 
             <dt class=" dt-header2 text-center">
@@ -136,130 +93,9 @@
                     }
                 </table>
             </dd>
-
         </dl>
 </div>
 <div class="empty-box"></div>
 <p class="text-center">
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.PollId }) |
-    @Html.ActionLink("Back to List", "Index")*@
     <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
-
 </p>
-
-<style>
-
-    .Result-header {
-        font-size: 70px;
-        font-family: 'Anton', sans-serif;
-        margin-top: 30px;
-    }
-
-    .thead-custom-color {
-        background-color: #f4511e;
-    }
-
-    .universal-button {
-
-        display: inline-block;
-        padding: 0.46rem 1.6em;
-        margin: 0 0.2em 0.2em 0;
-        border-radius: 0.12em;
-        box-sizing: border-box;
-        text-decoration: none !important;
-        font-weight: 300 !important;
-        color: #000000 !important;
-        text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
-        background-color: #f4511e;
-        text-align: center;
-        transition: all 0.15s;
-        font-family: 'Anton', sans-serif;
-        width: 200px;
-    }
-
-        .universal-button:hover {
-            text-shadow: 0 0 2em rgba(255,255,255,1);
-            color: #FFFFFF !important;
-            border-color: #FFFFFF;
-            transition: all 0.3s ease 0s;
-            text-decoration: none !important;
-            border-radius: 50px;
-        }
-    .empty-box{
-        height: 50px;
-    }
-
-    .dt-header1 {
-        font-size: 24px;
-        font-family: 'Anton', sans-serif;
-        text-decoration: underline;
-    }
-
-    .dt-header2 {
-        font-size: 24px;
-        font-family: 'Anton', sans-serif;
-    }
-
-    .dd-answer {
-        font-size: 18px;
-        font-family:  'Roboto Slab', serif;
-    }
-
-
-    .unique-blockquote {
-        font-size: 1.4em;
-        width: 60%;
-        margin: 20px auto;
-        font-family: Open Sans;
-        font-style: italic;
-        color: #555555;
-        padding: 1.2em 30px 1.2em 75px;
-        border-left: 8px solid #f4511e;
-        line-height: 1.6;
-        position: relative;
-        background: #EDEDED;
-        border-radius: 30px;
-    }
-
-        .unique-blockquote:before {
-            font-family: Arial;
-            content: "\201C";
-            color: #f4511e;
-            font-size: 4em;
-            position: absolute;
-            left: 10px;
-            top: -10px;
-        }
-
-        .unique-blockquote:after {
-            content: '';
-        }
-
-        .unique-blockquote span {
-            display: block;
-            color: #333333;
-            font-style: normal;
-            font-weight: bold;
-            margin-top: 1em;
-        }
-
-    .table-content {
-        font-family: 'Roboto Slab',serif;
-    }
-
-    .table-header-polls {
-        font-size: 18px;
-        font-family: 'Roboto Slab',serif;
-    }
-    .check-box {
-        transform: scale(2.0);
-    }
-
-    .empty-box {
-        height: 50px;
-    }
-    
-
-   
-
-</style>
