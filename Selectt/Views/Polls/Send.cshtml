@@ -4,104 +4,123 @@
     ViewBag.Title = "Send";
 }
 
-<h2>Send</h2>
 
-<h3>Are you sure you want to send this?</h3>
+
+<h2 class="Result-header text-center">Send</h2>
+<h3 class="delete-header text-center">Are you sure you want to send this?</h3>
+
 <div>
-    <h4>Poll</h4>
+
     <hr />
     <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
+        <dt class=" dt-header1 text-center">
+            Poll Name
         </dt>
 
-        <dd>
+        <dd class="dd-answer text-center">
             @Html.DisplayFor(model => model.Name)
         </dd>
+        <dd class="dd-answer text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Question)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Question)
+            <blockquote class="unique-blockquote">
+                <p>
+                    @Html.DisplayFor(model => model.Question)
+                </p>
+                
+            </blockquote>
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDateTime)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EndDateTime)
+            <table class="table text-center justify-content-center">
+                <thead>
+                    <tr align="center">
+                        <th class="table-header-polls" width="33%">
+                            @Html.DisplayNameFor(model => model.EndDateTime)
+                        </th>
+                        <th class="table-header-polls" width="33%">
+                            Are these results public?
+
+                        </th>
+                        <th class="table-header-polls" width="33%">
+                            Was this poll sent out to respondents?
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="table-content" width="33%">@Html.DisplayFor(model => model.EndDateTime)</td>
+                    <td width="33%">@Html.DisplayFor(model => model.AreResultsPublic)</td>
+                    <td width="33%">@Html.DisplayFor(model => model.WasSent)</td>
+                </tr>
+
+            </table>
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AreResultsPublic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AreResultsPublic)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WasSent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WasSent)
-        </dd>
-
-        <dt>
+        <dt class="dt-header2 text-center">
             Answers
         </dt>
 
         <dd>
-            <table class="table">
-                <tr>
-                    <th>Answer</th>
-                    <th>Responses</th>
-                </tr>
+            <table class="table  text-center">
+                <thead class="thead-custom-color">
+                    <tr align="center">
+                        <th class="table-header-polls" width="50%">Answer</th>
+                        <th class="table-header-polls" width="50%">Responses</th>
+                    </tr>
+                </thead>
+
                 @foreach (var answer in Model.Answers)
                 {
                     <tr>
-
-                        <td>@answer.PollAnswer</td>
-                        <td>@answer.Responses.Count</td>
+                        <td class="table-content" width="50%">@answer.PollAnswer</td>
+                        <td class="table-content" width="50%">@answer.Responses.Count</td>
                     </tr>
                 }
             </table>
         </dd>
 
-        <dt>
+        <dt class=" dt-header2 text-center">
             Respondents
         </dt>
 
         <dd>
-            <table class="table">
-                <tr>
-                    <th>Respondent Email</th>
-                    <th>Has Voted</th>
-                </tr>
-                <tr>
-                    @foreach (var respondent in Model.Respondents)
-                    {
-                        <td>@respondent.Email</td>
-                        <td>@respondent.HasVoted</td>
-                    }
-                </tr>
+            <table class="table  text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="table-header-polls" width="50%">Respondent Email</th>
+                        <th class="table-header-polls" width="50%">Has Voted</th>
+                    </tr>
+                </thead>
+                @foreach (var respondent in Model.Respondents)
+                {
+                    <tr>
+                        <td class="table-content" width="50%">@respondent.Email</td>
+                        <td class="table-content" width="50%">@respondent.HasVoted</td>
+                    </tr>
+                }
             </table>
         </dd>
-
     </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Send" class="btn btn-warning" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+<div class="empty-box"></div>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color text-center">
+        <input type="submit" value="Send" class="universal-button" /> 
+        <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
+    </div>
+}
+
+
+<style>
+    .dd-answer {
+        font-size: 18px;
+        font-family: 'Roboto Slab', serif;
+    }
+</style>
+

@@ -2,10 +2,60 @@
     ViewBag.Title = "About Us";
     ViewBag.Message = "Who Are We?";
 }
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
+
+<h3 class="Result-header2 ">@ViewBag.Message</h3>
+
+<p class="p">We are a group of students at Oakland University majoring in Computer Science, Information Technology and Computer Engineering. This website is for a software engineering project that we are all collaborating on.</p>
+<p class="p">We wanted to make a website that would have a practical applications in the real world, so we came up with Selecct as a voting platform. </p>
+<h4 class="Result-header2 ">What is Selectt?</h4>
+<p class="p"> Selectt is a voting application that functions similarly to StrawPoll. But it is a little unique in that it ensures a single vote is carried out per individual who uses it.</p>
+<h4 class="Result-header2 text-left">How did we do it?</h4>
+<p class="p"> we accomplished this by using e-mail links in order to allow users to send out invites to participants who wish to participate in a poll. Our algorithm then ensures that if you receive an e-mail you are guaranteed a single vote. No cheesing the system here! Your votes are then displayed using the Chart.JS framework and you can view it at your leisure.</p>
+<h4 class="Result-header2 ">Why did we do it?</h4>
+<p class="p"> This project was a class requirement of ours, so we decided to have some fun with it. In light of the recent political climate we felt there was a need to create something that could unite us in the most old fashioned form of democracy, Voting!</p>
+<h4 class="Result-header2 ">What technologies did you use to accomplish this?</h4>
+<ul>
+    <li class="About-list-Item">C#</li>
+    <li class="About-list-Item">ASP.NET Framework</li>
+    <li class="About-list-Item">HTML/CSS</li>
+    <li class="About-list-Item">BootStrap</li>
+    <li class="About-list-Item">Javascript</li>
+    <li class="About-list-Item">Charts.js</li>
+    <li class="About-list-Item">Entity Framework</li>
+    <li class="About-list-Item">Razor Pages</li>
+    <li class="About-list-Item">Jquery</li>
+    <li class="About-list-Item">Google Fonts</li>
+    <li class="About-list-Item">Font-Awesome Icons</li>
+    <li class="About-list-Item">Coffee</li>
+    <li class="About-list-Item">Energy Drinks</li>
+</ul>
+<h4 class="Result-header2 ">How do I make a poll?</h4>
+<p class="p"> To make a poll simply head over to the Home Page via the selector in the top-left. That will take you to the Polls page where you can see a list of all the Polls you've created. In the header you will find a Button labeled "Create A New Poll" Click it and fill in your poll information, then press "Create". Congratulations! You just created your first poll! Additionally press the edit button and begin to add Answers and Respondents to your poll. Once you are satisfied with your poll save your changes and check back in on the home-page where you can then send in your poll. Be warned though, once you send your poll you can no longer change your information.</p>
+<h4 class="Result-header2 ">Who can view my poll?</h4>
+<p class="p"> When you create a poll, and when you edit a poll. You have the option to toggle wether or not your poll is public. This means that when your send your poll out your respondents will or will not be able to see the results.</p>
+<h4 class="Result-header2 ">What can I do after I make a poll?</h4>
+<p class="p"> After making your poll you can send the poll out to respondents you have named in your mailing list. Sub-sequently your respondents will vote on your poll. To view the results of the poll simply hang out in the results page denoted by a Pie button on your home page. This will graphically display your results in real time!</p>
 
 
-<p>We are a group of students at Oakland University majoring in Computer Science, Information Technology and Computer Engineering. This website is for a software engineering project that we are all collaborating on.</p>
-<p>We wanted to make a website that would have practical applications in the real world, so we came up with Selecct as a platform for creating polls for educational purposes. </p>
-<p>@Html.ActionLink("Return to Home", "Index", "Home", new { Area = "" }, new { @class = "btn btn-primary" })</p>
+<a href="@Url.Action("Index", "Home")" class="universal-button"><i class="fa fa-home fa-lg" aria-hidden="true"></i>  Return to Home</a>
+
+
+@section styles{
+
+    <style>
+
+        .fa {
+            vertical-align: middle;
+            font-size: 20px;
+        }
+
+        .p {
+            font-family: 'Roboto Slab', serif;
+            font-size: 17px;
+        }
+
+        .About-list-Item {
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+}

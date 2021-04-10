@@ -15,9 +15,305 @@
     white-space: normal;
 }
 
+
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
+
+
+/*---------Navbar HOme/About-------------*/
+.nav-link {
+    font-size: 25px !important;
+    font-family: 'Bungee Inline', cursive !important;
+    color: #cbcfd4 !important;
+}
+/*---------Selectt-------------*/
+.navbar-brand {
+    font-family: 'Anton', sans-serif !important;
+    font-size: 50px !important;
+}
+/*---------Navbar Image-------------*/
+.image-ballot-box {
+    width: 100px !important;
+}
+
+
+/*---------Navbar Email-------------*/
+.nav.navbar-nav.navbar-right li a {
+    font-size: 20px;
+    color: #f4511e !important;
+    font-family: 'Bungee Inline', cursive;
+}
+
+/*<--------------NavBar Logooff Button-------------->*/
+.btn {
+    display: inline-block;
+    border-radius: 12px;
+    background-color: #f4511e;
+    border-radius: 10px;
+    border: 4px double #343a40;
+    color: #343a40;
+    text-align: center;
+    font-size: 18px;
+    padding: 2px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+}
+
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn span:after {
+     content: '\00bb';
+     position: absolute;
+     opacity: 0;
+     top: 0;
+     right: -20px;
+     transition: 0.5s;
+}
+
+.btn:hover span {
+     padding-right: 25px;
+}
+
+.btn:hover span:after {
+     opacity: 1;
+     right: 0;
+}
+
+.btn:hover {
+     background-color: #343a40;
+}
+
+/*<----------------------Universal Buttons---------------->*/
+.universal-button {
+    display: inline-block;
+    padding: 0.46rem 1.6em;
+    margin: 0 0.2em 0.2em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    font-weight: 300 !important;
+    color: #000000 !important;
+    text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
+    background-color: #f4511e;
+    text-align: center;
+    transition: all 0.15s;
+    font-family: 'Anton', sans-serif;
+    width: 200px;
+}
+.universal-button:hover {
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color: #FFFFFF !important;
+    border-color: #FFFFFF;
+    transition: all 0.3s ease 0s;
+    text-decoration: none !important;
+    border-radius: 50px;
+    }
+    /*-------------Major page Header---------------*/
+.Result-header2 {
+    font-size: 40px !important;
+    font-family: 'Anton', sans-serif !important;
+    margin-top: 30px !important;
+}
+ /*<-----------------General Fonts----------------->*/
+
+.ballot-header {
+    font-size: 18px;
+    font-family: 'Anton', sans-serif;
+}
+
+
+.delete-header {
+    color: red;
+    font-weight: bolder;
+}
+
+
+.dt-header1 {
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    text-decoration: underline;
+}
+
+.dt-header2 {
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+}
+
+.dt-header3 {
+    font-size: 30px;
+    font-family: 'Anton', sans-serif;
+    text-decoration: underline;
+}
+
+.dd-answer {
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.form-size {
+    width: 250px;
+    margin: auto;
+}
+
+
+.Result-header {
+    font-size: 70px;
+    font-family: 'Anton', sans-serif;
+    margin-top: 30px;
+}
+
+
+
+
+/*<!--------------Warning Button--------->*/
+
+.warning-button {
+    display: inline-block;
+    padding: 0.46rem 1.6em;
+    margin: 0 0.2em 0.2em 0;
+    border-radius: 0.12em;
+    border-color: red;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    font-weight: 300 !important;
+    color: #000000 !important;
+    text-shadow: 0 0 0.04em 0.04em rgba(0,0,0,0.35);
+    background-color: red;
+    text-align: center;
+    transition: all 0.15s;
+    font-family: 'Anton', sans-serif;
+    width: 200px;
+}
+
+.warning-button:hover {
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color: #FFFFFF !important;
+    border-color: #FFFFFF;
+    transition: all 0.3s ease 0s;
+    text-decoration: none !important;
+    border-radius: 50px;
+}
+
+
+/*<----------------------Table Content----------------->*/
+.table-content {
+    font-family: 'Roboto Slab',serif;
+}
+
+.table-header-polls {
+    font-size: 18px;
+    font-family: 'Roboto Slab',serif;
+}
+
+.table-header-polls2 {
+    font-size: 15px;
+    font-family: 'Roboto Slab',serif;
+}
+
+.table-header-polls3 {
+    font-size: 18px;
+    font-family: 'Roboto Slab',serif;
+}
+/*<-----Index poll header--->*/
+.table-header-polls3 {
+    font-size: 19px;
+    font-family: 'Roboto Slab',serif;
+}
+
+.thead-custom-color {
+    background-color: #f4511e;
+}
+
+/*<----------Checkbox resize---------->*/
+.check-box {
+    transform: scale(2.0);
+}
+
+/*<--------------Empty Space Div--------->*/
+.empty-box {
+    height: 50px;
+}
+
+
+/*<---------------Block Quote--------------->*/
+
+.unique-blockquote {
+    font-size: 1.4em;
+    width: 60%;
+    margin: 20px auto;
+    font-family: Open Sans;
+    font-style: italic;
+    color: #555555;
+    padding: 1.2em 30px 1.2em 75px;
+    border-left: 8px solid #f4511e;
+    line-height: 1.6;
+    position: relative;
+    background: #EDEDED;
+    border-radius: 30px;
+}
+
+.unique-blockquote:before {
+    font-family: Arial;
+    content: "\201C";
+    color: #f4511e;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+.unique-blockquote:after {
+    content: '';
+}
+
+.unique-blockquote span {
+    display: block;
+    color: #333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+/*<---------Form fieldset Size----->*/
+.form-size {
+    width: 250px;
+    margin: auto;
+}
+
+
+/*<-----------HR COlor------>*/
+.orange-line {
+    background-color: #f4511e;
+}
+
+/*<----------ballot box container for create and edit poll form------*/
+.container-fluid {
+    background: #e9ecef;
+    border-radius: 50px;
+    box-shadow: #f4511e 10px 10px;
+}
+
+/*------Underlined header in ballot box container----*/
+.dt-header-custom {
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    text-decoration: underline;
+    text-decoration-color: #f4511e;
+}
+
+
+

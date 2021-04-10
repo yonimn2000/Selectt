@@ -4,20 +4,38 @@
     ViewBag.Title = "Vote";
 }
 
-<h2>Vote</h2>
+<h2 class="Result-header text-center">Vote</h2>
 
-<table class="table">
-    <tr>
-        <th>Answer</th>
-        <th></th>
-    </tr>
+<table class="table table-hover">
+    <thead class="thead-dark">
+
+        <tr>
+            <th class="table-header">Options</th>
+            <th class="table-header text-center">Choices</th>
+        </tr>
+    </thead>
     @foreach (var answer in Model.Answers)
     {
         <tr>
-            <td>@answer.PollAnswer</td>
-            <td>
+            <td class="table-content">@answer.PollAnswer</td>
+            <td class="table-content text-center">
                 @Html.ActionLink("Select", "SelectVote", new { answerId = answer.AnswerId, token = ViewBag.Token }, null)
             </td>
         </tr>
     }
 </table>
+
+<style>
+    .Result-header {
+        font-size: 75px;
+        font-family: 'Anton', sans-serif;
+    }
+    .table-header {
+        font-size: 24px;
+        font-family: 'Roboto Slab',serif;
+    }
+
+    .table-content {
+        font-family: 'Roboto Slab',serif;
+    }
+</style>

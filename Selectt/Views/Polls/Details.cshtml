@@ -4,96 +4,98 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="Result-header text-center">Details</h2>
 
 <div>
-    <h4>Poll</h4>
+    
     <hr />
     <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
+        <dt class=" dt-header1 text-center">
+            Poll Name
         </dt>
 
-        <dd>
+        <dd class="dd-answer text-center">
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Question)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Question)
+        <dd class="dd-answer text-center">   
+            <blockquote class="unique-blockquote">
+            <p>@Html.DisplayFor(model => model.Question)</p>
+            </blockquote>
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDateTime)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EndDateTime)
-        </dd>
+            <table class="table text-center justify-content-center">
+                <thead>
+                    <tr align="center">
+                        <th class="table-header-polls" width="33%">
+                            @Html.DisplayNameFor(model => model.EndDateTime)
+                        </th>
+                        <th class="table-header-polls" width="33%">
+                            Are these results public?
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AreResultsPublic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AreResultsPublic)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WasSent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WasSent)
-        </dd>
-
-        <dt>
-            Answers
-        </dt>
-
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>Answer</th>
-                    <th>Responses</th>
-                </tr>
-                @foreach (var answer in Model.Answers)
-                {
-                    <tr>
-                        <td>@answer.PollAnswer</td>
-                        <td>@answer.Responses.Count</td>
+                        </th>
+                        <th class="table-header-polls" width="33%">
+                            Was this poll sent out to respondents?
+                        </th>
                     </tr>
-                }
+                </thead>
+                <tr>
+                    <td class="table-content" width="33%">@Html.DisplayFor(model => model.EndDateTime)</td>
+                    <td width="33%">@Html.DisplayFor(model => model.AreResultsPublic)</td>
+                    <td width="33%">@Html.DisplayFor(model => model.WasSent)</td>
+                </tr>
             </table>
         </dd>
 
-        <dt>
-            Respondents
-        </dt>
+            <dt class=" dt-header2 text-center">
+                Answers
+            </dt>
 
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>Respondent Email</th>
-                    <th>Has Voted</th>
-                </tr>
-                @foreach (var respondent in Model.Respondents)
-                {
-                    <tr>
-                        <td>@respondent.Email</td>
-                        <td>@respondent.HasVoted</td>
-                    </tr>
-                }
-            </table>
-        </dd>
+            <dd>
+                <table class="table  text-center col-sm-12 ">
+                    <thead class="thead-custom-color">
+                        <tr align="center">
+                            <th class="table-header-polls" width="50%">Answer</th>
+                            <th class="table-header-polls" width="50%" >Responses</th>
+                        </tr>
+                    </thead>
 
-    </dl>
+                    @foreach (var answer in Model.Answers)
+                    {
+                        <tr>
+                            <td class="table-content" width="50%">@answer.PollAnswer</td>
+                            <td class="table-content" width="50%">@answer.Responses.Count</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+
+            <dt class=" dt-header2 text-center">
+                Respondents
+            </dt>
+
+            <dd>
+                <table class="table  text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="table-header-polls" width="50%">Respondent Email</th>
+                            <th class="table-header-polls" width="50%">Has Voted</th>
+                        </tr>
+                    </thead>
+                    @foreach (var respondent in Model.Respondents)
+                    {
+                        <tr>
+                            <td class="table-content" width="50%">@respondent.Email</td>
+                            <td class="table-content" width="50%">@respondent.HasVoted</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+        </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PollId }) |
-    @Html.ActionLink("Back to List", "Index")
+<div class="empty-box"></div>
+<p class="text-center">
+    <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
 </p>
