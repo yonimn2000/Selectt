@@ -25,12 +25,20 @@ textarea {
 }
 
 
-/*---------Navbar HOme/About-------------*/
+/*---------Navbar-------------*/
 .nav-link {
     font-size: 25px !important;
     font-family: 'Bungee Inline', cursive !important;
     color: #cbcfd4 !important;
 }
+
+/*---------Navbar Hover-------------*/
+.nav-link:hover {
+    font-size: 25px !important;
+    font-family: 'Bungee Inline', cursive !important;
+    color: #aaa !important;
+}
+
 /*---------Selectt-------------*/
 .navbar-brand {
     font-family: 'Anton', sans-serif !important;
@@ -46,6 +54,13 @@ textarea {
 .nav.navbar-nav.navbar-right li a {
     font-size: 20px;
     color: #f4511e !important;
+    font-family: 'Bungee Inline', cursive;
+}
+
+/*---------Navbar Email Hover-------------*/
+.nav.navbar-nav.navbar-right li a:hover {
+    font-size: 20px;
+    color: red !important;
     font-family: 'Bungee Inline', cursive;
 }
 

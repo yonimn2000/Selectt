@@ -1,9 +1,9 @@
 ﻿@model Selectt.Models.AnswerCreateModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Answer";
 }
-<h2 class="Result-header text-center">Create</h2>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm())
@@ -11,23 +11,21 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        
+
         <hr />
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class=" form-group text-center">
-        @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "dt-header1 control-label col-md-2" })
-        <div class="form-size">
-            @Html.EditorFor(model => model.Answer, new { htmlAttributes = new { @class = "control-form text-center" } })
-            @Html.ValidationMessageFor(model => model.Answer, "", new { @class = "text-danger" })
+        <div class=" form-group text-center">
+            @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "dt-header1 control-label col-md-2" })
+            <div class="form-size">
+                @Html.EditorFor(model => model.Answer, new { htmlAttributes = new { @class = "control-form text-center" } })
+                @Html.ValidationMessageFor(model => model.Answer, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
         <div class="form-group text-center">
-            <div class="">
-                <input type="submit" value="Create" class="universal-button" />
-            </div>
+                <input type="submit" value="Add" class="universal-button" />
         </div>
     </div>
 }
@@ -39,4 +37,3 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-

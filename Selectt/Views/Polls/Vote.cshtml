@@ -4,7 +4,13 @@
     ViewBag.Title = "Vote";
 }
 
-<h2 class="Result-header text-center">Vote</h2>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
+
+<blockquote class="unique-blockquote">
+    <p>
+        @Html.DisplayFor(model => model.Question)
+    </p>
+</blockquote>
 
 <table class="table table-hover">
     <thead class="thead-dark">
@@ -25,17 +31,20 @@
     }
 </table>
 
-<style>
-    .Result-header {
-        font-size: 75px;
-        font-family: 'Anton', sans-serif;
-    }
-    .table-header {
-        font-size: 24px;
-        font-family: 'Roboto Slab',serif;
-    }
+@section styles{
+    <style>
+        .Result-header {
+            font-size: 75px;
+            font-family: 'Anton', sans-serif;
+        }
 
-    .table-content {
-        font-family: 'Roboto Slab',serif;
-    }
-</style>
+        .table-header {
+            font-size: 24px;
+            font-family: 'Roboto Slab',serif;
+        }
+
+        .table-content {
+            font-family: 'Roboto Slab',serif;
+        }
+    </style>
+}

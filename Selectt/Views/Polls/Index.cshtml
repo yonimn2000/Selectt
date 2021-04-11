@@ -1,18 +1,15 @@
 ﻿@model IEnumerable<Selectt.Entities.Poll>
 
 @{
-    ViewBag.Title = "Polls";
+    ViewBag.Title = "Your Polls";
 }
 
-<h2 class="Result-header text-center">Your Polls</h2>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
 
-
-
-
-<table class="table table-bordered  table-hover">
+<table class="table table-bordered table-hover">
     <thead class="thead-dark">
         <tr class="text-center">
-            <th class="table-header-polls3  align-middle">
+            <th class="table-header-polls3 align-middle">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th class="table-header-polls3 align-middle">
@@ -33,10 +30,9 @@
             <th class="table-header-polls2 align-middle">
                 @Html.DisplayNameFor(model => model.WasSent)
             </th>
-            <th><a href="@Url.Action("Create")" class="universal-button"><i class="fa fa-plus fa-sm" aria-hidden="true"></i>  Create A New Poll</a></th>
+            <th><a href="@Url.Action("Create")" class="universal-button"><i class="fa fa-plus fa-sm" aria-hidden="true"></i>  Create a New Poll</a></th>
         </tr>
     </thead>
-
 
     @foreach (var item in Model)
     {
@@ -68,15 +64,15 @@
                     <tr>
                         @if (!item.WasSent)
                         {
-                            <td><a href="@Url.Action("Edit", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Edit your Poll's details."><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
-                            <td><a href="@Url.Action("Send", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Send your Poll to desired respondents. Once sent you will not be able to edit your Poll."><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a></td>
+                            <td><a href="@Url.Action("Edit", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Edit poll"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+                            <td><a href="@Url.Action("Send", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Send your poll to the respondents. Once sent you will not be able to edit the poll."><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a></td>
                         }
                         else
                         {
-                            <td><a href="@Url.Action("Results", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Examine your results."><i class="fa fa-pie-chart fa-2x" aria-hidden="true"></i></a></td>
+                            <td><a href="@Url.Action("Results", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Examine your results"><i class="fa fa-pie-chart fa-2x" aria-hidden="true"></i></a></td>
                         }
-                        <td> <a href="@Url.Action("Details", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="View  Poll's details."><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a></td>
-                        <td> <a href="@Url.Action("Delete", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Delete Your Poll."><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
+                        <td> <a href="@Url.Action("Details", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="View poll details"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a></td>
+                        <td> <a href="@Url.Action("Delete", new { id = item.PollId })" class="universal-button-standard-size" data-toggle="tooltip" data-placement="top" title="Delete Your poll"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
                     </tr>
                 </table>
             </td>

@@ -1,13 +1,11 @@
 ﻿@model Selectt.Entities.Poll
 
 @{
-    ViewBag.Title = "Send";
+    ViewBag.Title = "Send Poll";
 }
 
-
-
-<h2 class="Result-header text-center">Send</h2>
-<h3 class="delete-header text-center">Are you sure you want to send this?</h3>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
+<h3 class="delete-header text-center">Are you sure you want to send this poll to respondents?</h3>
 
 <div>
 
@@ -27,7 +25,7 @@
                 <p>
                     @Html.DisplayFor(model => model.Question)
                 </p>
-                
+
             </blockquote>
         </dd>
 
@@ -104,23 +102,21 @@
 </div>
 <div class="empty-box"></div>
 
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-actions no-color text-center">
-        <input type="submit" value="Send" class="universal-button" /> 
+        <input type="submit" value="Send" class="universal-button" />
         <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
     </div>
 }
 
-
-<style>
-    .dd-answer {
-        font-size: 18px;
-        font-family: 'Roboto Slab', serif;
-    }
-</style>
-
+@section styles{
+    <style>
+        .dd-answer {
+            font-size: 18px;
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+}

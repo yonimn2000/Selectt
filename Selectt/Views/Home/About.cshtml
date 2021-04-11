@@ -1,44 +1,80 @@
 ﻿@{
     ViewBag.Title = "About Us";
-    ViewBag.Message = "Who Are We?";
 }
 
-<h3 class="Result-header2 ">@ViewBag.Message</h3>
+<h3 class="Result-header2 ">Who We Are</h3>
+<p class="p">
+    We are a group of students at Oakland University majoring in Computer Science, Information Technology,
+    and Computer Engineering. This website is for a Software Engineering course project that we are all
+    collaborating on. We wanted to make a website that would have a practical applications in the real world,
+    so we came up with Selectt as a voting platform.ting on.ting on.ting on.
+</p>
 
-<p class="p">We are a group of students at Oakland University majoring in Computer Science, Information Technology and Computer Engineering. This website is for a software engineering project that we are all collaborating on.</p>
-<p class="p">We wanted to make a website that would have a practical applications in the real world, so we came up with Selecct as a voting platform. </p>
-<h4 class="Result-header2 ">What is Selectt?</h4>
-<p class="p"> Selectt is a voting application that functions similarly to StrawPoll. But it is a little unique in that it ensures a single vote is carried out per individual who uses it.</p>
-<h4 class="Result-header2 text-left">How did we do it?</h4>
-<p class="p"> we accomplished this by using e-mail links in order to allow users to send out invites to participants who wish to participate in a poll. Our algorithm then ensures that if you receive an e-mail you are guaranteed a single vote. No cheesing the system here! Your votes are then displayed using the Chart.JS framework and you can view it at your leisure.</p>
-<h4 class="Result-header2 ">Why did we do it?</h4>
-<p class="p"> This project was a class requirement of ours, so we decided to have some fun with it. In light of the recent political climate we felt there was a need to create something that could unite us in the most old fashioned form of democracy, Voting!</p>
-<h4 class="Result-header2 ">What technologies did you use to accomplish this?</h4>
+<h4 class="Result-header2 ">What Selectt Is</h4>
+<p class="p">
+    Selectt is a unique voting application that ensures a single vote is carried out per an invited individual respondent.
+</p>
+
+<h4 class="Result-header2 text-left">How We Did It</h4>
+<p class="p">
+    We accomplished voter integrity and anonymity by using tokenized email links in order to allow poll creators
+    to send out invites to respondents who wish to vote on a poll. The website then ensures that if you receive an email,
+    you are guaranteed a single vote. No cheesing the system here! All votes are then displayed on a nice chart that 
+    the poll creator and the voters can view.
+</p>
+
+<h4 class="Result-header2 ">Why We Did It</h4>
+<p class="p">
+    This project was a class requirement of ours, so we decided to have some fun with it. In light of the recent political
+    climate we felt there was a need to create something that could unite us in the most old fashioned form of democracy, Voting!
+</p>
+
+<h4 class="Result-header2 ">What Technologies We Used</h4>
 <ul>
     <li class="About-list-Item">C#</li>
-    <li class="About-list-Item">ASP.NET Framework</li>
-    <li class="About-list-Item">HTML/CSS</li>
-    <li class="About-list-Item">BootStrap</li>
-    <li class="About-list-Item">Javascript</li>
-    <li class="About-list-Item">Charts.js</li>
+    <li class="About-list-Item">ASP.NET MVC Framework</li>
     <li class="About-list-Item">Entity Framework</li>
     <li class="About-list-Item">Razor Pages</li>
-    <li class="About-list-Item">Jquery</li>
+    <li class="About-list-Item">HTML</li>
+    <li class="About-list-Item">CSS</li>
+    <li class="About-list-Item">Bootstrap</li>
+    <li class="About-list-Item">JavaScript</li>
+    <li class="About-list-Item">Chart.js</li>
+    <li class="About-list-Item">jQuery</li>
     <li class="About-list-Item">Google Fonts</li>
     <li class="About-list-Item">Font-Awesome Icons</li>
     <li class="About-list-Item">Coffee</li>
     <li class="About-list-Item">Energy Drinks</li>
 </ul>
-<h4 class="Result-header2 ">How do I make a poll?</h4>
-<p class="p"> To make a poll simply head over to the Home Page via the selector in the top-left. That will take you to the Polls page where you can see a list of all the Polls you've created. In the header you will find a Button labeled "Create A New Poll" Click it and fill in your poll information, then press "Create". Congratulations! You just created your first poll! Additionally press the edit button and begin to add Answers and Respondents to your poll. Once you are satisfied with your poll save your changes and check back in on the home-page where you can then send in your poll. Be warned though, once you send your poll you can no longer change your information.</p>
-<h4 class="Result-header2 ">Who can view my poll?</h4>
-<p class="p"> When you create a poll, and when you edit a poll. You have the option to toggle wether or not your poll is public. This means that when your send your poll out your respondents will or will not be able to see the results.</p>
-<h4 class="Result-header2 ">What can I do after I make a poll?</h4>
-<p class="p"> After making your poll you can send the poll out to respondents you have named in your mailing list. Sub-sequently your respondents will vote on your poll. To view the results of the poll simply hang out in the results page denoted by a Pie button on your home page. This will graphically display your results in real time!</p>
 
+<hr />
+
+<h3 class="h1">Frequently Asked Questions</h3>
+
+<h4 class="Result-header2 ">How Do I Make a Poll?</h4>
+<p class="p">
+    After registering and logging in, simply head over to the home page via the selector at the top left part of the screen.
+    That will take you to your polls page where you will be able to see a list of all your polls. In the header you will find
+    a button labeled "Create a New Poll". Click it and fill in your poll information, then press "Create". Congratulations!
+    You just created your first poll! Additionally press the edit button and begin to add answers and respondents to your poll.
+    Once you are satisfied with your poll, save your changes and check back in on the polls page where you can then send in your
+    poll. Be warned though, once you send your poll you can no longer update the information of the poll.
+</p>
+
+<h4 class="Result-header2 ">Who Can View My Poll?</h4>
+<p class="p">
+    When you create or edit a poll, you have the option to toggle whether or not the poll results are public.
+    This means that when your send your poll out, your respondents will or will not be able to see the results.
+</p>
+
+<h4 class="Result-header2 ">What Can I Do After I Make a Poll?</h4>
+<p class="p">
+    After making your poll you can send the poll out to respondents you have named in your mailing list. Subsequently,
+    your respondents will vote on your poll. To view the results of the poll simply hang out in the results page denoted
+    by a pie chart button on your home page. This will graphically display your results in real time!
+</p>
 
 <a href="@Url.Action("Index", "Home")" class="universal-button"><i class="fa fa-home fa-lg" aria-hidden="true"></i>  Return to Home</a>
-
 
 @section styles{
 
