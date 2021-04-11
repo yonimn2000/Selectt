@@ -1,5 +1,7 @@
 # Selectt
 
+*Oakland University - CSI 3370 - Software Engineering - Winter 2021*
+
 A simple anonymous polling web application.
 
 ## Problem Statement
