@@ -4,16 +4,12 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-
-        <!--Link for Awesome Font Log Out Icon-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <ul class="nav navbar-nav navbar-right">
             <li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "nav-link", title = "Manage" })
             </li>
-            <!--<li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>-->
-            <li> <!--Log Out Button-->
+            <li>
+                <!--Log Out Button-->
                 <button type="button" class="btn btn-primary btn-sm" onclick="javascript:document.getElementById('logoutForm').submit()">
                     <span>
                         <i class="fa fa-sign-in" aria-hidden="true">
@@ -31,4 +27,3 @@ else
         <li class="nav-item2">@Html.ActionLink("Log in", "Login", "Account", new { Area = "" }, new { @class = "nav-link" })</li>
     </ul>
 }
-

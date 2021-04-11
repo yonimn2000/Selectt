@@ -1,15 +1,13 @@
 ﻿@model Selectt.Entities.Respondent
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Respondent";
 }
 
-<h2 class="Result-header text-center">Delete</h2>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
 <h3 class="delete-header text-center">Are you sure you want to delete this Respondent from the list</h3>
 <div>
-
     <hr />
-    <h4 class="dt-header1 text-center">Respondent</h4>
     <p>
         <table class="table  table-bordered table-hover text-center align-middle">
             <thead class="thead-light">
@@ -19,7 +17,7 @@
                 </tr>
             </thead>
             <tr>
-                <td class="table-contet" width="50%">@Html.DisplayFor(model => model.Email)</td>            
+                <td class="table-contet" width="50%">@Html.DisplayFor(model => model.Email)</td>
                 <td class="table-content" width="50%">@Html.DisplayFor(model => model.HasVoted)</td>
             </tr>
         </table>
@@ -31,10 +29,10 @@
 
         <div class="form-actions no-color text-center">
             <input type="submit" value="Delete" class="warning-button" />
-            
+
             <a href="@Url.Action( "Edit", "Polls", new { id = Model.PollId })" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To Poll Editor</a>
 
         </div>
     }
-        </div>
+</div>
 

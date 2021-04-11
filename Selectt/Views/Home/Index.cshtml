@@ -1,28 +1,29 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Welcome";
 }
 
-<div class="jumbotron">
-    <h1 class="Result-header">Welcome to Selectt!</h1>
-    <p class="lead">With Selectt, you can create your own polls. </p>
-
+<div class="jumbotron text-center">
+    <h1 class="Result-header">Welcome to <i>Selectt</i> !</h1>
+    <p class="lead">With <i>Selectt</i>, you can create your anonymous own polls.</p>
 </div>
+
 <div class="container text-center">
     <div class="row text-center">
         <div class="">
-            <h2 class="dt-header3">Getting started</h2>
-            <p class="table-header-polls3">To get started, click on the "Register" button. If you already have an account, you can click "Log In" instead. Be sure to read the about page when you get a chance, and learn some fun things about Selectt!</p>
-            <p>@Html.ActionLink("Register An Account", "Register", "Account", new { Area = "" }, new { @class = "universal-button" })&nbsp;@Html.ActionLink("Log Into Selectt", "Login", "Account", new { Area = "" }, new { @class = "universal-button" })</p>
-
+            <p class="table-header-polls3">
+                To get started, create an account. If you already have an account, just log in instead.
+                Be sure to read the about page when you get a chance to learn some fun facts about <i>Selectt</i> !
+            </p>
+            <p>
+                @Html.ActionLink("Create an account", "Register", "Account", new { Area = "" }, new { @class = "universal-button" })
+                @Html.ActionLink("Log Into Selectt", "Login", "Account", new { Area = "" }, new { @class = "universal-button" })
+            </p>
         </div>
     </div>
 </div>
 
-
 @section styles{
     <style>
-
-
         .universal-button {
             color: #f4511e !important;
             background: #f7f7f7;
@@ -44,5 +45,4 @@
                 text-decoration: none;
             }
     </style>
-
 }

@@ -1,17 +1,16 @@
 ﻿@model Selectt.Models.RespondentEditModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Respondent";
 }
 
-<h2 class="Result-header text-center">Edit</h2>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4 class="dt-header1 text-center">Respondent</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.RespondentId)

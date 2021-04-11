@@ -1,23 +1,20 @@
 ﻿@model Selectt.Entities.Poll
 
 @{
-    ViewBag.Title = "Results";
+    ViewBag.Title = "Poll Results";
 }
 
 <body>
-
-
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="Result-header text-center">Results</h1>
+            <h1 class="Result-header text-center">@ViewBag.Title</h1>
         </div>
     </div>
-
 
     <table class="table table-striped table-bordered table-hover text-center">
         <thead class="thead-dark">
             <tr class="text-center">
-                <th class="table-header" width="50%">Answers</th>
+                <th class="table-header" width="50%">Answer</th>
                 <th class="table-header" width="50%">Votes</th>
             </tr>
         </thead>
@@ -29,7 +26,6 @@
             </tr>
         }
     </table>
-
 
     <div class="row">
         <div class="col-sm-12">
@@ -53,7 +49,7 @@
                             </label>
                         </div>
 
-                       
+
                     </div>
                     <div id="pie-ID" class="card-body-pie">
                         <canvas class="my-4 h-2" id="pie"></canvas>
@@ -63,18 +59,12 @@
                     </div>
                     <div class="empty-box"></div>
                     <a href="@Url.Action("Index", "Home")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i>  Return to Polls</a>
-                                        
+
                 </div>
             </div>
         </div>
     </div>
 </body>
-
-
-
-
-
-
 
 @section scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
@@ -88,7 +78,7 @@
             var a = document.getElementById("title-pie");
             var b = document.getElementById("title-bar");
             if (x.style.display === "none") {
-                
+
                 x.style.display = "block";
                 y.style.display = "none";
                 a.style.display = "block";
@@ -98,14 +88,11 @@
                 y.style.display = "block";
                 a.style.display = "none";
                 b.style.display = "block";
-                
+
             }
         }
 
-    
-        
-          
-    var piechart = document.getElementById('pie').getContext('2d');
+        var piechart = document.getElementById('pie').getContext('2d');
         var mypiechart = new Chart(piechart, {
             type: 'pie',
             data: {
@@ -129,16 +116,13 @@
                     "display": true,
                     "labels": {
                         "fontSize": 18,
-                        "fontFamily": "Roboto Slab",                                                
+                        "fontFamily": "Roboto Slab",
                     },
                     }
-                },        
+                },
         });
 
-      
-        
-
-    var barchart = document.getElementById('bar').getContext('2d');
+        var barchart = document.getElementById('bar').getContext('2d');
         var mybarchart = new Chart(barchart, {
             type: 'bar',
             data: {
@@ -161,10 +145,10 @@
                 tooltips: {
                     titleFontSize:25,
                     bodyFontSize: 22,
-                    
+
                 },
-                
-                
+
+
                 indexAxis: 'y', // Set axes
                 scales: {
                     xAxes:[{
@@ -183,27 +167,23 @@
 
             }
         });
-   
-
     </script>
 }
 
 @section styles{
 
     <style>
-    
+
         /*<------------Chart & Chart Slider------------->*/
 
         .chart-text {
             font-size: 30px;
             font-family: 'Roboto Slab', serif;
-            
         }
         /*<-----------Unique table header sizes------->*/
         .table-header {
             font-size: 24px;
             font-family: 'Roboto Slab',serif;
-            
         }
 
         .switch-label {
@@ -324,8 +304,5 @@
             -moz-transition: All 0.3s ease;
             -o-transition: All 0.3s ease;
         }
-
-
-        
     </style>
 }

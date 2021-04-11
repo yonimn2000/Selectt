@@ -1,14 +1,13 @@
 ﻿@model Selectt.Entities.Poll
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Poll";
 }
 
-<h2 class="Result-header text-center">Delete</h2>
-<h3 class="delete-header text-center">Are you sure you want to delete this?</h3>
+<h2 class="Result-header text-center">@ViewBag.Title</h2>
+<h3 class="delete-header text-center">Are you sure you want to delete this poll?</h3>
 
 <div>
-
     <hr />
     <dl class="dl-horizontal">
 
@@ -26,7 +25,7 @@
                 <p>
                     @Html.DisplayFor(model => model.Question)
                 </p>
-                
+
             </blockquote>
         </dd>
 
@@ -108,10 +107,9 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-actions no-color text-center">
-    <input type="submit" value="Delete" class="warning-button" />
-    
-    <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
-</div>
-}
+    <div class="form-actions no-color text-center">
+        <input type="submit" value="Delete" class="warning-button" />
 
+        <a href="@Url.Action( "Index")" class="universal-button"><i class="fa fa-envelope-open-o fa-sm" aria-hidden="true"></i> Back To List</a>
+    </div>
+}
