@@ -108,8 +108,9 @@ After making your poll you can send the poll out to respondents you have named i
 
 ### Results Page
 
-![image](https://user-images.githubusercontent.com/24995692/114311057-372a1a00-9abb-11eb-80f9-e10be49dc588.png)
-![image](https://user-images.githubusercontent.com/24995692/114311071-40b38200-9abb-11eb-8ffb-686163139f7c.png)
+![image](https://user-images.githubusercontent.com/24995692/114311705-ca644f00-9abd-11eb-8f0e-a2dc3e4d9688.png)
+![image](https://user-images.githubusercontent.com/24995692/114311710-d3552080-9abd-11eb-8abe-c8453be91494.png)
+![image](https://user-images.githubusercontent.com/24995692/114311750-f5e73980-9abd-11eb-975c-4a3242518013.png)
 
 ### Pollster Poll Details View After Getting Some Poll Votes
 
