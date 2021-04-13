@@ -83,35 +83,35 @@ After making your poll you can send the poll out to respondents you have named i
 
 ### Home Page
 
-![image](https://user-images.githubusercontent.com/24995692/114310358-9175ab80-9ab8-11eb-9734-e04128bf1d37.png)
+![image](media/home-page.png)
 
 ### Poll Creation Page
 
-![image](https://user-images.githubusercontent.com/24995692/114310548-14970180-9ab9-11eb-8426-3acc10b74373.png)
+![image](media/poll-create.png)
 
 ### Polls List
 
-![image](https://user-images.githubusercontent.com/24995692/114310598-3e502880-9ab9-11eb-8185-4f77805bddf8.png)
+![image](media/poll-list.png)
 
 ### Poll Edit Page
 
-![image](https://user-images.githubusercontent.com/24995692/114310693-a30b8300-9ab9-11eb-9e6b-c1820713b2f9.png)
-![image](https://user-images.githubusercontent.com/24995692/114310702-a999fa80-9ab9-11eb-8488-6446734bc4d4.png)
+![image](media/poll-edit.png)
+![image](media/poll-edit2.png)
 
 ### The Email
 
-![image](https://user-images.githubusercontent.com/24995692/114310815-2a58f680-9aba-11eb-89e4-2075d86280ee.png)
+![image](media/vote-email.png)
 
 ### Voting Page
 
-![image](https://user-images.githubusercontent.com/24995692/114310836-40ff4d80-9aba-11eb-97e8-3719d5e567ea.png)
+![image](media/vote-page.png)
 
 ### Results Page
 
-![image](https://user-images.githubusercontent.com/24995692/114311839-5d04ee00-9abe-11eb-92b1-acc8687d8904.png)
-![image](https://user-images.githubusercontent.com/24995692/114311710-d3552080-9abd-11eb-8abe-c8453be91494.png)
-![image](https://user-images.githubusercontent.com/24995692/114311750-f5e73980-9abd-11eb-975c-4a3242518013.png)
+![image](media/results-table.png)
+![image](media/results-pie.png)
+![image](media/results-bar.png)
 
 ### Pollster Poll Details View After Getting Some Poll Votes
 
-![image](https://user-images.githubusercontent.com/24995692/114310951-b834e180-9aba-11eb-8ac8-1b37dde268c7.png)
+![image](media/poll-details.png)
