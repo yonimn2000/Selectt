@@ -1,8 +1,10 @@
-# Selectt
+# *Selectt*
 
 *Oakland University - CSI 3370 - Software Engineering - Winter 2021*
 
 A simple anonymous polling web application.
+
+[Engineering and Demo Video of *Selectt*](https://youtu.be/BclOXeF8T98)
 
 ## Problem Statement
 
@@ -26,11 +28,11 @@ Polling anonymity is extremely important, meaning that a vote of an individual s
 
 ## Who We Are
 
-We are a group of students at Oakland University majoring in Computer Science, Information Technology, and Computer Engineering. This website is for a Software Engineering course project that we are all collaborating on. We wanted to make a website that would have a practical applications in the real world, so we came up with Selectt as a voting platform.ting on.ting on.ting on.
+We are a group of students at Oakland University majoring in Computer Science, Information Technology, and Computer Engineering. This website is for a Software Engineering course project that we are all collaborating on. We wanted to make a website that would have a practical applications in the real world, so we came up with *Selectt* as a voting platform.ting on.ting on.ting on.
 
-## What Selectt Is
+## What *Selectt* Is
 
-Selectt is a unique voting application that ensures a single vote is carried out per an invited individual respondent.
+*Selectt* is a unique voting application that ensures a single vote is carried out per an invited individual respondent.
 
 ## How We Did It
 
